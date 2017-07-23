@@ -1,8 +1,10 @@
 # Projects
 This Repository contains my Udacity Machine Learning NanoDegree Projects and Final Capstone Project.
-Models are prepared using machine learning techniques such as Deep Learning, SVM, Decision Trees, Neural Net etc. 
+Models are prepared using machine learning techniques such as Deep Learning, SVM, Decision Trees, Neural Net, NLTK etc. 
 
 Following are the Projects:
+
+Natural language processing 
 
 Boston House Price Prediction 
 
