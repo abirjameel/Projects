@@ -204,7 +204,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -243,7 +243,7 @@ div#notebook {
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -334,23 +334,23 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">])</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">])</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">])</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">])</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">])</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">])</span>
 
 <span class="c1"># TODO: Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">])</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">])</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">])</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">])</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -374,10 +374,10 @@ div#notebook {
 <pre>Statistics for Boston housing dataset:
 
 Minimum price: $105,000.00
-Maximum price: $105,000.00
-Mean price: $105,000.00
-Median price $105,000.00
-Standard deviation of prices: $105,000.00
+Maximum price: $1,024,800.00
+Mean price: $454,342.94
+Median price $438,900.00
+Standard deviation of prices: $165,171.13
 </pre>
 </div>
 </div>
@@ -1752,7 +1752,7 @@ Think about the pros and cons of adding more training points based on if the tra
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Top Right Graph with max Depth = 3, Since the Training and Testing Score are converging to a same point with larger score among all others. Adding more training points definitely helps the model to learn more and may or may not avoid it from overfitting it depends on the data.</p>
+<p><strong>Answer: </strong> Top Right Graph with max Depth = 3, Since the Training and Testing Score are converging to a same point with larger score among all others, if we look at the trend after 250 - 300 data points there is no further improvement in the R^2 Score. So adding more data points would <strong>not</strong> effect much.</p>
 
 </div>
 </div>
@@ -2295,7 +2295,7 @@ When the Model is trained with the maximum depth of 10, it clearly shows the sig
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong> In Grid Search technique, what we are doing is to optimize our model on the basis of different set of parameters passed and identifying the best model out of it. e.g. in Decision Trees if we model using max_depth parameter and check on which max_depth (out of [5, 10, 15...]) it is performing best this will be a grid search.</p>
 
 </div>
 </div>
@@ -2322,8 +2322,9 @@ When the Model is trained with the maximum depth of 10, it clearly shows the sig
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> KFold divides all the samples in k groups of samples, called folds, of equal sizes (if possible). The prediction function is learned using k - 1 folds, and the fold left out is used for test.
-Parameters that are not directly learnt within estimators can be set by searching a parameter space for the best Cross validation performance score. Grid Search requries a cross validatin scheme which is porvided by kfold cross validation.</p>
+<p><strong>Answer: </strong> KFold divides all the samples in k groups of samples, called folds, of equal sizes (if possible). The prediction function is learned using k - 1 folds, and the fold left out is used for testing.
+e.g. if we have 100 data points and make a 10 fold CV then 9 folds are used for training and 1 for testing and it revolves the data such that each fold becomes testing set atleast once. 
+Cross validation is the process of training learners using one set of data and testing it using a different set. Parameter tuning is the process to selecting the values for a model's parameters that maximize the accuracy of the model. So, We can say that Cross Validation certainly helps data grid search to find the most optimized set of model's parameters given different fold of data.</p>
 
 </div>
 </div>
@@ -2463,7 +2464,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong> Hint: </strong> The answer comes from the output of the code snipped above.</p>
-<p><strong>Answer: </strong> Parameter 'max_depth' is 4 for the optimal model.</p>
+<p><strong>Answer: </strong> Parameter 'max_depth' is 4 for the optimal model. Yes, this is strongly in accordance with my guess in Q:6, I reported the optimal model of depth 3, which is very near to the actual solution of depth 4, and in the learning curve in Q6 we only have curves of max_depth 3 and then 6, so selecting a max_depth 3 at that time is not a bad choice.</p>
 
 </div>
 </div>
@@ -2556,7 +2557,16 @@ Predicted selling price for Client 3&apos;s home: $931,636.36
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> Predicted selling price for Client 1's home: $403,025.00</p>
 <p>Predicted selling price for Client 2's home: $237,478.72</p>
-<p>Predicted selling price for Client 3's home: $931,636.36</p>
+<p>Predicted selling price for Client 3's home: $931,636.36
+Yes the price seems reasonable since Client 1's home with avg characterstics got a price which is near mean value of homes.</p>
+<p>Client 2 Price with below average characterstics have price which is lesser than mean price of house.</p>
+<p>Client 3 with extra ordinary characterstics have price near max price of distribution of prices .</p>
+<p>These are the Statistics from Data Exploration :</p>
+<p>Minimum price: $105,000.00</p>
+<p>Maximum price: $1,024,800.00</p>
+<p>Mean price: $454,342.94</p>
+<p>Median price $438,900.00</p>
+<p>Standard deviation of prices: $165,171.13</p>
 
 </div>
 </div>
