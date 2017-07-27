@@ -414,8 +414,11 @@ Standard deviation of prices: $165,171.13
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> We expect a home that has an 'RM' value(number of rooms) of 6 be worth more than a home that has an 'RM' value of 7.</p>
-<p>We expect a neighborhood that has an 'LSTAT' value(percent of lower class workers) of 15 have home prices be worth less than a neighborhood that has an 'LSTAT' value of 20.</p>
+<p>We expect a neighborhood that has an 'LSTAT' value(percent of lower class workers) of 15 have home prices be worth more than a neighborhood that has an 'LSTAT' value of 20.</p>
 <p>We expect a neighborhood that has an 'PTRATIO' value(ratio of students to teachers) of 10 have home prices be worth more than a neighborhood that has an 'PTRATIO' value of 15.</p>
+<p>The Correlation among the features can be understood as with the increase in RM feature there is increase in the price. 
+The Lesser the percentage of LSTAT the higher be the price. 
+The Lesser the PTRATIO the higher be the price.</p>
 
 </div>
 </div>
@@ -2295,7 +2298,7 @@ When the Model is trained with the maximum depth of 10, it clearly shows the sig
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> In Grid Search technique, what we are doing is to optimize our model on the basis of different set of parameters passed and identifying the best model out of it. e.g. in Decision Trees if we model using max_depth parameter and check on which max_depth (out of [5, 10, 15...]) it is performing best this will be a grid search.</p>
+<p><strong>Answer: </strong> In Grid Search technique, what we are doing is to optimize our model on the basis of different set of parameters passed and identifying the best model out of it. e.g. in Decision Trees if we model using max_depth parameter and check on which max_depth (out of [5, 10, 15...]) it is performing best this will be a grid search. Grid Search as the name suggests when it has more than one parameters to take in to consideration. It Makes a matrix e.g. in SVC [kernel = Linear, gamma = [100, 200, 300, 400]], [kernel = 'rbf', gamma = [100, 200, 300, 400]], and evaluates the model performance over each of the parameter combination. For Evaluation it uses a scoring function which the user needs to define e.g. if we are doing regression we can use RMSE, R^2 and in Classification we can use F1, F beta Score etc.</p>
 
 </div>
 </div>
@@ -2324,7 +2327,9 @@ When the Model is trained with the maximum depth of 10, it clearly shows the sig
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> KFold divides all the samples in k groups of samples, called folds, of equal sizes (if possible). The prediction function is learned using k - 1 folds, and the fold left out is used for testing.
 e.g. if we have 100 data points and make a 10 fold CV then 9 folds are used for training and 1 for testing and it revolves the data such that each fold becomes testing set atleast once. 
-Cross validation is the process of training learners using one set of data and testing it using a different set. Parameter tuning is the process to selecting the values for a model's parameters that maximize the accuracy of the model. So, We can say that Cross Validation certainly helps data grid search to find the most optimized set of model's parameters given different fold of data.</p>
+Cross validation is the process of training learners using one set of data and testing it using a different set. Parameter tuning is the process to selecting the values for a model's parameters that maximize the accuracy of the model. So, We can say that Cross Validation certainly helps data grid search to find the most optimized set of model's parameters given different fold of data, grid search and . 
+In Grid_SearchCV only training dataset gets converted to K folds. And the split is done sequentially not randomly untill we specify it to be. 
+On the basis of performance of different models, The model which has the best Score is selected on the basis of Cross Validation dataset.</p>
 
 </div>
 </div>
